@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+	color: var(--tg-theme-text-color);
+	background: var(--tg-theme-bg-color);
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        width: 250px;
+    }
+</style>
+<body>
+    <div class="form">
+        <h2>Регистрация</h2>
+        <input type="text" placeholder="Имя" id="username">
+        <input type="text" placeholder="Класс" id="classname">
+        <button onclick="sendForm()">Зарегистрироваться</button>
+    </div>
+</body>
+<script>
+    let tg = window.Telegram.WebApp
+    function sendForm() {
+        const username = document.getElementById('username').value
+        const classname = document.getElementById('classname').value
+        tg.sendData(JSON.stringify(username, classname)); 
+    }
+</script>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+</html>
