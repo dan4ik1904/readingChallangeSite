@@ -26,7 +26,8 @@
 </body>
 <script>
     let tg = window.Telegram.WebApp
-	alert(tg.initDataUnsafe.user.last_name)
+    alert(12345)
+    alert(tg.initDataUnsafe.user.last_name)
     function sendForm() {
 	document.getElementById('username').value = tg.initDataUnsafe.user.last_name
         const name = document.getElementById('username').value
