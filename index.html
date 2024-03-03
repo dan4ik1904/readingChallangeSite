@@ -26,8 +26,9 @@
 </body>
 <script>
     let tg = window.Telegram.WebApp
+	alert(tg.initDataUnsafe.user.last_name)
     function sendForm() {
-	document.getElementById('username').value = tg.initDataUnsafe.user.id
+	document.getElementById('username').value = tg.initDataUnsafe.user.last_name
         const name = document.getElementById('username').value
         const classname = document.getElementById('classname').value
         fetch('http://81.94.150.112:8001/set/user/' + tg.initDataUnsafe.user.id + `?name=${name}&classname=${classname}`)
